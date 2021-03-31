@@ -1,1 +1,1 @@
-# vgerulis-eshop
+# vgerulis EShop
