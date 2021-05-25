@@ -33,7 +33,7 @@ function Products() {
             <div className="text-center font-semibold">{x.price}$</div>
 
             <div className="flex justify-center">
-              <Button to="/product" className="text-blue-400 hover:bg-gray-50 p-1">
+              <Button to={`/products/${x.id}`} className="text-blue-400 hover:bg-gray-50 p-1">
                 VIEW
               </Button>
             </div>

@@ -12,10 +12,10 @@ function App() {
       </header>
       <main className="p-2">
         <Switch>
-          <Route exact path="/">
+          <Route exact path={['/', '/products']}>
             <Products />
           </Route>
-          <Route exact path="/product">
+          <Route exact path="/products/:id">
             <Product />
           </Route>
           <Route exact path="/vision">
