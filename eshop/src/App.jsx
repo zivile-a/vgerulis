@@ -12,15 +12,9 @@ function App() {
       </header>
       <main className="p-2">
         <Switch>
-          <Route exact path={['/', '/products']}>
-            <Products />
-          </Route>
-          <Route exact path="/products/:id">
-            <Product />
-          </Route>
-          <Route exact path="/vision">
-            <Vision />
-          </Route>
+          <Route exact path={['/', '/products']} component={Products} />
+          <Route exact path="/products/:id" component={Product} />
+          <Route exact path="/vision" component={Vision} />
         </Switch>
       </main>
     </Router>
