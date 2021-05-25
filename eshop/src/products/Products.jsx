@@ -21,7 +21,7 @@ function Products() {
     <ul className="flex flex-wrap">
       {products.map((x) => (
         <li key={x.id} className="p-5">
-          <Card className="w-64 h-80">
+          <Card className="w-64 h-80" isRounded>
             <div className="h-3/4">
               <img src={x.image} alt={x.name} className="max-h-full m-auto" />
             </div>
