@@ -22,17 +22,21 @@ function Products() {
       {products.map((x) => (
         <li key={x.id} className="p-5">
           <Card className="w-64 h-80" isRounded>
-            <div className="h-3/4">
+            <div className="h-3/4 flex">
               <img src={x.image} alt={x.name} className="max-h-full m-auto" />
             </div>
 
-            <div className=" text-center truncate mt-1 font-bold" title={x.title}>
+            <div className=" text-center truncate font-bold" title={x.title}>
               {x.title}
             </div>
 
-            <div className="text-center font-semibold mt-1">{x.price}$</div>
+            <div className="text-center font-semibold">{x.price}$</div>
 
-            <Link to="/product">VIEW</Link>
+            <div className="flex justify-center">
+              <Link to="/product" className="text-blue-400 hover:bg-gray-50 p-1">
+                VIEW
+              </Link>
+            </div>
           </Card>
         </li>
       ))}
