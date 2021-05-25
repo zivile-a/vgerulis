@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Products() {
   const [products, setProducts] = useState([]);
@@ -24,11 +25,13 @@ function Products() {
               <img src={x.image} alt={x.name} className="max-h-full m-auto" />
             </div>
 
-            <div className="text-center text-lg font-semibold mt-1">{x.price}$</div>
-
-            <div className=" text-center text-lg truncate mt-1 font-bold" title={x.title}>
+            <div className=" text-center truncate mt-1 font-bold" title={x.title}>
               {x.title}
             </div>
+
+            <div className="text-center font-semibold mt-1">{x.price}$</div>
+
+            <Link to="/product">VIEW</Link>
           </div>
         </li>
       ))}
