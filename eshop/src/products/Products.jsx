@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import Button from '../common/components/Button';
 import Card from '../common/components/Card';
 
 function Products() {
@@ -33,9 +33,9 @@ function Products() {
             <div className="text-center font-semibold">{x.price}$</div>
 
             <div className="flex justify-center">
-              <Link to="/product" className="text-blue-400 hover:bg-gray-50 p-1">
+              <Button to="/product" className="text-blue-400 hover:bg-gray-50 p-1">
                 VIEW
-              </Link>
+              </Button>
             </div>
           </Card>
         </li>
