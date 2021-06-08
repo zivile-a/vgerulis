@@ -7,21 +7,26 @@ function Counter() {
   const [count, setCount] = useState(1);
 
   function handleIncrement() {
-    setCount((prevCount) => prevCount + 1);
+    if (count === '') {
+      setCount(1);
+    } else {
+      setCount((prevCount) => prevCount + 1);
+    }
   }
 
   function handleDecrement() {
-    setCount((prevCount) => prevCount - 1);
+    if (count === 1 || count === '') {
+      setCount(1);
+    } else {
+      setCount((prevCount) => prevCount - 1);
+    }
   }
 
   function handleInputChange(e) {
     const val = e.target.value;
+    const newVal = val === '' ? '' : parseInt(val);
 
-    if (!val) {
-      setCount(1);
-    } else {
-      setCount(parseInt(val));
-    }
+    setCount(newVal);
   }
 
   return (
