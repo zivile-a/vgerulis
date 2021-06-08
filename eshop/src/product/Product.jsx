@@ -9,16 +9,23 @@ import Button from '../common/components/Button';
 function Product() {
   const { id } = useParams();
   const [product, setProduct] = useState();
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const fetchProduct = async () => {
+      setIsLoading(true);
       const { data } = await axios(getProduct(id));
 
+      setIsLoading(false);
       setProduct(data);
     };
 
     fetchProduct();
   }, [id]);
+
+  if (isLoading) {
+    return <div>LOADING!!!</div>;
+  }
 
   return (
     <div className="flex m-auto px-2" style={{ maxWidth: 1000 }}>
