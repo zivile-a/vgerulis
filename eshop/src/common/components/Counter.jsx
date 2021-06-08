@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import Button from '../../common/components/Button';
+
+const buttonClass = 'font-bold transform scale-125 duration-200 hover:-translate-y-0.5 active:translate-y-0.5';
 
 function Counter() {
   const [count, setCount] = useState(1);
@@ -23,9 +26,13 @@ function Counter() {
 
   return (
     <div>
-      <button onClick={handleDecrement}>-</button>
-      <input type="number" value={count} onChange={handleInputChange} />
-      <button onClick={handleIncrement}>+</button>
+      <Button className={buttonClass} onClick={handleDecrement}>
+        -
+      </Button>
+      <input type="number" value={count} className="outline-none p-2 w-10" inputMode="numeric" onChange={handleInputChange} />
+      <Button className={buttonClass} onClick={handleIncrement}>
+        +
+      </Button>
     </div>
   );
 }
